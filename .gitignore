@@ -1,3 +1,6 @@
 # Ignore Python virtual environment
 env/
 .env
+documents/
+.DS_Store
+embeddings/
