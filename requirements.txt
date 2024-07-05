@@ -2,3 +2,7 @@ python-dotenv
 azure-search-documents
 langchain
 openai
+ragas
+pandas
+matplotlib
+nest-asyncio

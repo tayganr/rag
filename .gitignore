@@ -4,3 +4,7 @@ env/
 documents/
 .DS_Store
 embeddings/
+code.py
+eval_data_csv_to_json.py
+evaluation_data.csv
+evaluation_data.json
