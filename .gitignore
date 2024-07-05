@@ -1,10 +1,10 @@
-# Ignore Python virtual environment
 env/
+venv/
 .env
-documents/
+# documents/
 .DS_Store
-embeddings/
+# embeddings/
 code.py
 eval_data_csv_to_json.py
 evaluation_data.csv
-evaluation_data.json
+# evaluation_data.json

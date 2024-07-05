@@ -1,4 +1,6 @@
-# Retrieval Augmented Generation with Azure OpenAI and Azure AI Search
+# README.md  
+   
+# Retrieval Augmented Generation with Azure OpenAI and Azure AI Search  
    
 This repository contains a series of Python notebooks that demonstrate how to process raw text data, generate embeddings using Azure OpenAI, create and populate an Azure AI Search index, perform various search techniques, and implement a Retrieval-Augmented Generation (RAG) system.  
    
@@ -7,8 +9,10 @@ This repository contains a series of Python notebooks that demonstrate how to pr
 2. [Notebooks Overview](#notebooks-overview)  
 3. [Environment Variables](#environment-variables)  
 4. [Folder Structure](#folder-structure)  
-5. [Usage](#usage)  
-6. [Evaluation](#evaluation)  
+5. [Sample Data](#sample-data)  
+6. [Usage](#usage)  
+7. [Evaluation](#evaluation)  
+8. [Contributing](#contributing)  
    
 ## Setup  
    
@@ -40,7 +44,8 @@ This repository contains a series of Python notebooks that demonstrate how to pr
    ```  
    
 4. **Prepare the `documents` Folder:**  
-   - Place your text files in the `documents` folder. These should be in plain text format.  
+   - The `documents` folder contains sample text files from the UK Parliament Hansard, specifically debates from [Commons Hansard for 24 May 2024 (Volume 750)](https://hansard.parliament.uk/commons/2024-05-24). These files are available in the public domain and are used to demonstrate the capabilities of this project.  
+   - To use your own data, replace the text files in the `documents` folder with your own text documents.  
    
 5. **Create the `.env` File:**  
    - Create a `.env` file in the root directory of the project and populate it with your Azure service details.  
@@ -62,7 +67,8 @@ This repository contains a series of Python notebooks that demonstrate how to pr
    ```  
    
 6. **Prepare the Evaluation Dataset:**  
-   - Ensure you have the `evaluation_data.json` file containing `question`, `contexts`, and `ground_truth`.  
+   - The `evaluation_data.json` file contains sample evaluation data corresponding to the Hansard debates.  
+   - To use your own evaluation data, replace the contents of `evaluation_data.json` with your own questions, contexts, and ground_truth data.  
    
 ## Notebooks Overview  
    
@@ -113,8 +119,31 @@ AZURE_OPENAI_CHAT_MODEL_NAME=your-chat-model
 ├── 03_search.ipynb  
 ├── 04_rag.ipynb  
 ├── 05_evaluation.ipynb  
-└── evaluation_data.json      # Evaluation dataset containing question, contexts, and ground_truth  
+├── evaluation_data.json      # Evaluation dataset containing question, contexts, and ground_truth  
+└── sample_data/              # Folder containing sample data used for demonstration  
 ```  
+   
+## Sample Data  
+   
+- The `documents` folder contains sample text files from the UK Parliament Hansard, specifically debates from [Commons Hansard for 24 May 2024 (Volume 750)](https://hansard.parliament.uk/commons/2024-05-24). These files are in the public domain and are used to demonstrate the capabilities of this project.  
+- The `evaluation_data.json` file contains sample evaluation data corresponding to the Hansard debates. The evaluation data includes synthetic question/answer pairs generated using large language models (LLMs). This synthetic data may contain mistakes and has not been validated by a Subject Matter Expert (SME). It is purely used for demonstration purposes.  
+   
+### JSON Structure  
+The structure of the `evaluation_data.json` adheres to the expected structure for the RAGAS framework:  
+```json  
+{  
+  "question": ["Example question 1", "Example question 2"],  
+  "contexts": [["Context 1 for Q1", "Context 2 for Q1"], ["Context 1 for Q2", "Context 2 for Q2"]],  
+  "ground_truth": ["Expected answer for Q1", "Expected answer for Q2"]  
+}  
+```  
+   
+### Replacing with Your Own Data  
+- **Text Documents:**  
+  - Replace the text files in the `documents` folder with your own text documents in plain text format.  
+    
+- **Evaluation Dataset:**  
+  - Replace the contents of `evaluation_data.json` with your own questions, contexts, and ground_truth data following the same structure.  
    
 ## Usage  
    
