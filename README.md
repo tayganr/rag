@@ -1,5 +1,3 @@
-# README.md  
-   
 # Retrieval Augmented Generation with Azure OpenAI and Azure AI Search  
    
 This repository contains a series of Python notebooks that demonstrate how to process raw text data, generate embeddings using Azure OpenAI, create and populate an Azure AI Search index, perform various search techniques, and implement a Retrieval-Augmented Generation (RAG) system.  
